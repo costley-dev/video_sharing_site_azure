@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>My Website</title> 
+
+    <link rel="stylesheet" href="styles/style.css"> <!-- Linking CSS --> 
+
+</head> 
+
+<body> 
+
+    <header> 
+
+        <h1>Costley Videos</h1> 
+
+        <nav> 
+
+            <ul> 
+
+                <li><a href="index.html">Home</a></li> 
+
+                <li><a href="about.html">About</a></li> 
+
+            </ul> 
+
+        </nav> 
+
+        <button id="loginBtn" class="login-button">Login</button> 
+
+        <button id="signUpBtn" class="sign-up-button">Sign Up</button> <!-- Sign Up Button --> 
+
+    </header> 
+
+ 
+ 
+
+    <main> 
+
+        <!-- Video Upload Section --> 
+
+        <section class="video-upload"> 
+
+            <h2>Upload Your Video</h2> 
+
+            <form id="videoForm" action="upload_video.php" method="post" enctype="multipart/form-data"> 
+
+                <label for="videoUpload">Choose a video to upload:</label> 
+
+                <input type="file" name="video" id="videoUpload" accept="video/*" required> 
+
+                <br> 
+
+                <button type="submit" name="submit">Upload Video</button> 
+
+            </form> 
+
+            <div id="uploadedVideo"> 
+
+                <h3>Your uploaded video:</h3> 
+
+                <video id="videoPlayer" controls></video> 
+
+            </div> 
+
+        </section> 
+
+    </main> 
+
+ 
+ 
+
+    <script src="scripts/script.js"></script> <!-- Linking JavaScript --> 
+
+     
+
+    <!-- Optional JavaScript to handle video display on the page --> 
+
+    <script> 
+
+        const videoUpload = document.getElementById("videoUpload"); 
+
+        const videoPlayer = document.getElementById("videoPlayer"); 
+
+        const uploadedVideoSection = document.getElementById("uploadedVideo"); 
+
+ 
+ 
+
+        videoUpload.addEventListener("change", function(event) { 
+
+            const file = event.target.files[0]; 
+
+            if (file) { 
+
+                const videoURL = URL.createObjectURL(file); 
+
+                videoPlayer.src = videoURL; 
+
+                uploadedVideoSection.style.display = "block"; // Show video player section 
+
+            } 
+
+        }); 
+
+    </script> 
+
+</body> 
+
+</html> 
