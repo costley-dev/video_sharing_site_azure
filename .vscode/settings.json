@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/84cf60dd-c8e4-490d-b589-7de57ff07319/resourceGroups/video-web-app/providers/Microsoft.Web/sites/costley-videos",
+    "appService.deploySubpath": ".github"
+}
